@@ -1,9 +1,25 @@
 <?php
-
 /**
- * Description of Collection
+ * DruGento_CountryOrder extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       DruGento
+ * @package        DruGento_CountryOrder
+ * @copyright      Copyright (c) 2018
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Override for country collection
  *
- * @author alexweb@gmail.com
+ * @category    DruGento
+ * @package     DruGento_CountryOrder
+ * @author      Alexander Yurchik alexweb@gmail.com
  */
 class DruGento_CountryOrder_Model_Resource_Country_Collection extends Mage_Directory_Model_Resource_Country_Collection {
     

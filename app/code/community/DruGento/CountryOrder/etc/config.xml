@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+* DruGento_CountryOrder extension
+* 
+* NOTICE OF LICENSE
+* 
+* This source file is subject to the MIT License
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/mit-license.php
+* 
+* @category       DruGento
+* @package        DruGento_CountryOrder
+* @copyright      Copyright (c) 2018
+* @license        http://opensource.org/licenses/mit-license.php MIT License
+*/
+-->
+<config>
+    <modules>
+        <DruGento_CountryOrder>
+            <version>0.1.0</version>
+        </DruGento_CountryOrder>
+    </modules>
+    <global>
+        <blocks>
+            <drugento_countryorder>
+                <class>DruGento_CountryOrder_Block</class>
+            </drugento_countryorder>
+        </blocks>
+        <helpers>
+            <drugento_countryorder>
+                <class>DruGento_CountryOrder_Helper</class>
+            </drugento_countryorder>
+        </helpers>
+        <models>
+            <drugento_countryorder>
+                <class>DruGento_CountryOrder_Model</class>
+            </drugento_countryorder>
+            <directory_resource>
+                <rewrite>
+                    <country_collection>DruGento_CountryOrder_Model_Resource_Country_Collection</country_collection>
+                </rewrite>
+            </directory_resource>
+        </models>
+        <resources>
+            <drugento_countryorder_setup>
+                <setup>
+                    <module>DruGento_CountryOrder</module>
+                </setup>
+            </drugento_countryorder_setup>
+        </resources>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <drugento_countryorder>
+                    <file>drugento_countryorder.xml</file>
+                </drugento_countryorder>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <DruGento_CountryOrder>
+                    <files>
+                        <default>DruGento_CountryOrder.csv</default>
+                    </files>
+                </DruGento_CountryOrder>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <DruGento_CountryOrder before="Mage_Adminhtml">DruGento_CountryOrder_Adminhtml</DruGento_CountryOrder>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

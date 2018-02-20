@@ -1,0 +1,66 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Adminhtml_Block_Catalog_Product_Edit
+ */
+?>
+<?php $_countries = $this->getCountries(); ?>
+<div class="content-header">
+    <h3 class="icon-head "><?php echo $this->getHeader() ?></h3>
+    <p class="content-buttons form-buttons">
+        <?php echo $this->getSaveButtonHtml() ?>
+    </p>
+</div>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="country_list_edit" enctype="multipart/form-data">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <div style="display:none"></div>
+    <ul id="country-list">
+        <?php foreach($_countries as $_country): ?>
+        <li id="item_<?php echo $_country->getId() ?>"><?php echo $_country->getName() ?></li>
+        <?php endforeach; ?>
+    </ul>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+
+Event.observe(window, 'load', function() {
+    Sortable.create('country-list');
+});
+
+function saveOrder() {
+    var elem = document.createElement('input');
+    elem.type = 'hidden';
+    elem.name = 'country_ordered';
+    elem.value = Sortable.serialize('country-list');
+
+    document.getElementById('country_list_edit').append(elem);
+    $('country_list_edit').submit();
+}
+
+//]]>
+</script>

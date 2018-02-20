@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * DruGento_CountryOrder extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       DruGento
+ * @package        DruGento_CountryOrder
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_countryorder_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>drugento_countryorder/countryorder</menupath>
+            </action>
+        </reference>
+        <reference name="head">
+            <action method="addCss"><name>drugento_countryorder/countryorder.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="drugento_countryorder/adminhtml_countryorder" name="countries" template="drugento_countryorder/list.phtml" />
+        </reference>
+    </adminhtml_countryorder_index>
+</layout>
